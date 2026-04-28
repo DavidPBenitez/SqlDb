@@ -20,7 +20,7 @@ GO
 --used in HAVING
 DECLARE @totAmount money = 150.00;
 
-SELECT [customer_id], COUNT(*)
+SELECT [customer_id], COUNT(*), SUM([amount])
 FROM [sakila].[dbo].[payment]
 GROUP BY customer_id
 HAVING SUM([amount]) >= @totAmount
