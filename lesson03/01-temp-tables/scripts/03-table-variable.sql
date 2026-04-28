@@ -13,7 +13,7 @@ DECLARE @PetList TABLE (
 INSERT INTO @PetList(petName, ownerName, ownerEmail)
 SELECT p.Name, CONCAT_WS(' ', f.FirstName, f.LastName), COALESCE(f.Email, 'No email available')
 FROM dbo.Pet AS p 
-    INNER JOIN dbo.Friend AS f ON p.FriendId = f.FriendId;
+    INNER JOIN dbo.Friend AS f ON p.OwnerId = f.FriendId;
 
 --see what we got
 SELECT * FROM @PetList;
