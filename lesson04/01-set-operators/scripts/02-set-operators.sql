@@ -6,6 +6,12 @@ SELECT 'Customers', COUNT(DISTINCT first_name) AS nr_distinct_names FROM dbo.cus
 UNION ALL
 SELECT 'Actors', COUNT(DISTINCT first_name) AS nr_distinct_names FROM dbo.actor;
 
+--Use UNION to create one result set, UNION ALL ensures duplicate rows are kept
+SELECT 'Customers', COUNT(DISTINCT first_name) AS nr_distinct_names FROM dbo.customer
+UNION 
+SELECT 'Actors', COUNT(DISTINCT first_name) AS nr_distinct_names FROM dbo.actor;
+
+
 --Lets look at all the names in Customer which is also in actor table
 SELECT COUNT(DISTINCT first_name) FROM dbo.customer 
 WHERE first_name IN(SELECT first_name FROM dbo.actor);
