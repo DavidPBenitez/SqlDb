@@ -16,8 +16,7 @@ GO
 SELECT
    -- @FriendId reads the FriendId XML attribute on the <Friend> element
    MY_XML.Friend.value('@FriendId', 'uniqueidentifier') AS FriendId,
-   -- For each <Friend> node, .query('FirstName') selects the <FirstName> child element as an XML fragment,
-   -- then .value('.', 'NVARCHAR(200)') extracts its text content as a string
+   -- the rest of the columns read the value of the respective XML element inside <Friend>
    MY_XML.Friend.query('FirstName').value('.', 'NVARCHAR(200)') AS FirstName,
    MY_XML.Friend.query('LastName').value('.', 'NVARCHAR(200)') AS LastName,
    MY_XML.Friend.query('Country').value('.', 'NVARCHAR(200)') AS Country,
