@@ -46,3 +46,35 @@ Join `MusicGroup` to `Album`. Use `CONCAT` or string concatenation to format the
 **Expected outcome:** One `<MusicGroup>` element per album row, each carrying the group's details and a formatted album description.
 
 **Answer:** [02-xml.sql](../exercise-answers/02-xml.sql)
+
+---
+
+## Exercise 3 – Load data from an XML file
+
+**Task:** You have been provided with an XML file `xml-music-example.xml` containing `<Album>` records. Load its contents into a temporary table `#fromXML` with the following columns:
+
+| Column | XML source |
+|---|---|
+| `AlbumId` | `@AlbumId` attribute on `<Album>` |
+| `Name` | `<Name>` child element |
+| `ReleaseYear` | `<ReleaseYear>` child element |
+| `Genre` | `<Genre>` child element |
+
+Steps to complete:
+
+1. Copy the XML file into the Docker container:
+   ```
+   docker exec -u root sql2022container mkdir /usr/xmlfiles
+   docker cp xml-music-example.xml sql2022container:/usr/xmlfiles/
+   ```
+2. Use `OPENROWSET(BULK ..., SINGLE_BLOB)` to read the file.
+3. `CAST` the blob to the `xml` data type.
+4. Use `CROSS APPLY ... .nodes('Album')` to shred the XML into rows.
+5. Extract `@AlbumId` as `UNIQUEIDENTIFIER` and the child elements using `.query(...).value('.', 'NVARCHAR(200)')`.
+6. Use `SELECT INTO #fromXML` to avoid declaring the table schema up front.
+7. Strip any tab (`NCHAR(9)`) and newline (`NCHAR(10)`) characters from the text columns with `UPDATE` and `REPLACE`.
+8. `SELECT * FROM #fromXML` to verify the result, then `DROP TABLE #fromXML`.
+
+**Hint:** Attributes are read with `.value('@AttributeName', 'datatype')`. Child element text is read with `.query('ElementName').value('.', 'NVARCHAR(200)')`.
+
+**Answer:** [03-xml.sql](../exercise-answers/03-xml.sql)

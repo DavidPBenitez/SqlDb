@@ -1,0 +1,55 @@
+<Album AlbumId="62E14635-B92C-4EF7-B6E2-234761581392">
+	<Name>
+		Dark Side of the Moon
+	</Name>
+	<ReleaseYear>
+		1973
+	</ReleaseYear>
+	<Genre>
+		Progressive Rock
+	</Genre>
+</Album>
+<Album AlbumId="2A716A7E-F7FC-42DA-A3FA-4398787B5561">
+	<Name>
+		Rumours
+	</Name>
+	<ReleaseYear>
+		1977
+	</ReleaseYear>
+	<Genre>
+	 Rock
+	</Genre>
+</Album>
+<Album AlbumId="88E3F795-CEA2-4790-8765-4F73C6A690EA">
+	<Name>
+		Back in Black
+	</Name>
+	<ReleaseYear>
+		1980
+	</ReleaseYear>
+	<Genre>
+		Rock
+	</Genre>
+</Album>
+<Album AlbumId="1D5E46D0-6F16-4E0F-9BB5-27AA929573B7">
+	<Name>
+		Thriller
+	</Name>
+	<ReleaseYear>
+		1982
+	</ReleaseYear>
+	<Genre>
+		Jazz
+	</Genre>
+</Album>
+<Album AlbumId="5A21B3F7-AFE7-4CA3-B881-2C3AEB04F423">
+	<Name>
+		Kind of Blue
+	</Name>
+	<ReleaseYear>
+		1959
+	</ReleaseYear>
+	<Genre>
+		Jazz
+	</Genre>
+</Album>
