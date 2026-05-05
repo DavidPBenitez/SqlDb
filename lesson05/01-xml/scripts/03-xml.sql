@@ -3,7 +3,7 @@ GO
 
 --Preparations
 --insert a small and a large binary file into the table
---use openrowset to load a file into the BinaryData
+--use openrowset to load a  xmlfile into a variable and then insert it into the table
 --you need to have moved the xml-data file into the sql server docker container:
 --   1. open a terminal in the directory of your xml files on the computer
 --   2. create a directory in the docker container to store the xml files: 
@@ -14,6 +14,8 @@ GO
 
 --using SELECT INTO contruct and a temp table let's me avoid declaring a table separatly
 SELECT
+   -- @FriendId reads the FriendId XML attribute on the <Friend> element
+   MY_XML.Friend.value('@FriendId', 'uniqueidentifier') AS FriendId,
    -- For each <Friend> node, .query('FirstName') selects the <FirstName> child element as an XML fragment,
    -- then .value('.', 'NVARCHAR(200)') extracts its text content as a string
    MY_XML.Friend.query('FirstName').value('.', 'NVARCHAR(200)') AS FirstName,
@@ -39,6 +41,7 @@ SET FirstName = REPLACE (REPLACE(FirstName, NCHAR(9), ''), NCHAR(10), ''),
     LastName = REPLACE (REPLACE(LastName, NCHAR(9), ''), NCHAR(10), ''),
     Country = REPLACE (REPLACE(Country, NCHAR(9), ''), NCHAR(10), ''),
     Pet = REPLACE (REPLACE(Pet, NCHAR(9), ''), NCHAR(10), '')
+    -- FriendId is an integer attribute, no whitespace cleanup needed
 
 SELECT * FROM #fromXML;
 
