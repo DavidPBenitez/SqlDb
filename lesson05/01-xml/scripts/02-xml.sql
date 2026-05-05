@@ -1,9 +1,29 @@
 USE friends;
 GO
 
+
 --Get full detail of a friend in XML
+-- Using / in column aliases creates nested XML elements in FOR XML PATH:
+--   "Address/Country" nests <Country> inside <Address>
+--   "Pet/Name" nests the value inside <Pet>
+SELECT f.FriendId "FriendId", f.FirstName "FirstName", f.LastName "LastName", 
+    a.Country "Country", a.City "City",
+    CONCAT_WS(' ', p.Name, 'the happy', p.AnimalKind) "Name"
+FROM dbo.friend f
+INNER JOIN dbo.Address a
+ON f.AddressId = a.AddressId
+INNER JOIN dbo.Pet p
+ON f.FriendId = p.OwnerId
+FOR XML PATH('Friend')
+
+
+--Get full detail of a friend in XML
+-- Using / in column aliases creates nested XML elements in FOR XML PATH:
+--   "Address/Country" nests <Country> inside <Address>
+--   "Pet/Name" nests the value inside <Pet>
 SELECT f.FriendId "@FriendId", f.FirstName "FirstName", f.LastName "LastName", 
-    a.Country "Country", a.City "City", CONCAT_WS(' ', p.Name, 'the happy', p.AnimalKind) "Pet"
+    a.Country "Address/Country", a.City "Address/City",
+    CONCAT_WS(' ', p.Name, 'the happy', p.AnimalKind) "Pet/Name"
 FROM dbo.friend f
 INNER JOIN dbo.Address a
 ON f.AddressId = a.AddressId
