@@ -1,3 +1,6 @@
+USE friends;
+GO
+
 --get a row count before populating
 SELECT 'Nr of Pets' AS [Item], COUNT(*) AS [Count] FROM dbo.Pet
 UNION
@@ -31,10 +34,12 @@ FOR JSON PATH
 --         docker cp populate-pet.json sql2022container:/usr/jsonfiles/
 
 
---delete existing data to avoid primary key conflicts
+--delete existing data
 DELETE FROM dbo.Pet;
 DELETE FROM dbo.Friend;
 DELETE FROM dbo.Address;
+DELETE FROM dbo.FriendQuote;
+DELETE FROM dbo.Quote;
 
 
 INSERT INTO dbo.Address ([AddressId], [StreetAddress], [ZipCode], [City], [Country])
