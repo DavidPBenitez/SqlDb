@@ -10,7 +10,7 @@
     "AddressId": "B88E5103-7685-4153-8B58-1F6779888366",
     "StreetAddress": "Drottninggatan 4",
     "ZipCode": 11123,
-    "City": "Göteborg",
+    "City": "GÃ¶teborg",
     "Country": "Sweden"
   },
   {
@@ -24,14 +24,14 @@
     "AddressId": "94D83117-4B5A-42F0-80A5-3FAFBBA67302",
     "StreetAddress": "Classensgade 9",
     "ZipCode": 18924,
-    "City": "Århus",
+    "City": "Ã…rhus",
     "Country": "Denmark"
   },
   {
     "AddressId": "1EF8BD08-0E1B-4DC9-9CF5-48C7106649AF",
-    "StreetAddress": "Svedjevägen 1",
+    "StreetAddress": "SvedjevÃ¤gen 1",
     "ZipCode": 18399,
-    "City": "Malmö",
+    "City": "MalmÃ¶",
     "Country": "Sweden"
   },
   {
@@ -57,7 +57,7 @@
   },
   {
     "AddressId": "DE1DCD0E-F4D6-46DD-A0A4-82813F64C127",
-    "StreetAddress": "Nørreport 3",
+    "StreetAddress": "NÃ¸rreport 3",
     "ZipCode": 54300,
     "City": "Odense",
     "Country": "Denmark"
@@ -71,7 +71,7 @@
   },
   {
     "AddressId": "6C63C34B-3FA4-4000-8847-9DBCD45585CA",
-    "StreetAddress": "Sågveien 5",
+    "StreetAddress": "SÃ¥gveien 5",
     "ZipCode": 12345,
     "City": "Stavanger",
     "Country": "Norway"
@@ -101,7 +101,7 @@
     "AddressId": "0AF6E4B5-5522-4327-97DD-E16BAB7A7C60",
     "StreetAddress": "Vasagatan 3",
     "ZipCode": 18399,
-    "City": "Linköping",
+    "City": "LinkÃ¶ping",
     "Country": "Sweden"
   },
   {
@@ -113,7 +113,7 @@
   },
   {
     "AddressId": "B63F7BF3-B388-405C-8932-F252C0D48E97",
-    "StreetAddress": "Strøget 8",
+    "StreetAddress": "StrÃ¸get 8",
     "ZipCode": 11000,
     "City": "Copenhagen",
     "Country": "Denmark"
