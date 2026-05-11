@@ -1,4 +1,4 @@
-# Lesson 10 – Exercises: Subqueries in UPDATE, DELETE, INSERT
+# Lesson 07 – Exercises: Subqueries in UPDATE, DELETE, INSERT
 
 Use the `friends` database for all exercises.
 

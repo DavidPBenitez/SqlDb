@@ -1,4 +1,4 @@
-# Lesson 10 – Exercises: ROLLUP
+# Lesson 07 – Exercises: ROLLUP
 
 Use the `friends` database for all exercises.
 

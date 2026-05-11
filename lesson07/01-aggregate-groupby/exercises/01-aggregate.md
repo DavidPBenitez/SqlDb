@@ -1,4 +1,4 @@
-# Lesson 10 – Exercise: Aggregate Functions
+# Lesson 07 – Exercise: Aggregate Functions
 
 Use the `friends` database for all exercises.
 

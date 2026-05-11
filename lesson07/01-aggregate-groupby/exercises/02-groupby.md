@@ -1,4 +1,4 @@
-# Lesson 10 – Exercises: GROUP BY
+# Lesson 07 – Exercises: GROUP BY
 
 Use the `friends` database for all exercises.
 

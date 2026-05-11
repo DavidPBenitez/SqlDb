@@ -1,4 +1,4 @@
-# Lesson 10 – Exercises: Subqueries
+# Lesson 07 – Exercises: Subqueries
 
 Use the `music` database for all exercises.
 

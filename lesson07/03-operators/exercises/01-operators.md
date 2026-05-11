@@ -1,4 +1,4 @@
-# Lesson 10 – Exercises: ALL, ANY, EXISTS Operators
+# Lesson 07 – Exercises: ALL, ANY, EXISTS Operators
 
 Use the `music` database for all exercises.
 
