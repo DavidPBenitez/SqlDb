@@ -91,3 +91,39 @@ Group by `FirstName` and `LastName`, ordered by `TotalCopiesSold` descending.
 **Expected outcome:** One row per qualifying artist showing their name and the total copies sold across all albums from their Rock groups, ordered from highest to lowest.
 
 **Answer:** [01-cte.sql](../exercise-answers/01-cte.sql)
+
+---
+
+## Exercise 3 – CTE Pagination (Sakila database)
+
+Use the `sakila` database for this exercise.
+
+**Task:** Use a CTE to implement **page-based pagination** over the `film` table.
+
+Define a CTE named `films_paged` that selects `film_id`, `title`, `rating`, `rental_rate`, and `length` from `film`, and adds a `ROW_NUMBER()` window function column aliased as `rn`. Number the rows ordered by `title ASC`.
+
+Then write a `SELECT` that returns only the rows belonging to **page 3**, using a page size of **10 rows per page**.
+
+Return the following columns:
+
+- `rn` (aliased as `row_num`)
+- `film_id`
+- `title`
+- `rating`
+- `rental_rate`
+- `length`
+
+Order the results by `rn`.
+
+**Hint:** Declare two variables `@PageNumber` and `@PageSize` before the CTE. The `BETWEEN` filter for page *N* is:
+
+```
+rn BETWEEN (@PageNumber - 1) * @PageSize + 1
+       AND  @PageNumber      * @PageSize
+```
+
+**Expected outcome:** Rows 21–30 from the `film` table when sorted alphabetically by title (10 rows).
+
+**Bonus:** Extend the CTE to also include `COUNT(*) OVER ()` as `total_rows`, and add a computed `total_pages` column in the outer `SELECT` using `CEILING(CAST(total_rows AS FLOAT) / @PageSize)`.
+
+**Answer:** [01-cte.sql](../exercise-answers/01-cte.sql)
